@@ -247,6 +247,9 @@ hr.style-one {
   margin: 0;
   padding: 0;
 }
+.bg-sky {
+  background-color: #2bb0d9;
+}
 
 @media (max-width: 600px) {
   .myName {
