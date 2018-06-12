@@ -254,7 +254,7 @@ hr.style-one {
   opacity: 0.8;
 }
 .bg-sky {
-  background-color: #2bb0d9;
+  background: #2bb0d9;
 }
 
 @media (max-width: 600px) {
