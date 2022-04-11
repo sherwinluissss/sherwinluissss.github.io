@@ -11,6 +11,11 @@ nav{
   transition: all 1s ease;
 }
 
+a:hover,
+a{
+  color: #fff;
+}
+
 .container > h1 {
   padding: 95px 0 40px;
   text-align: center;
