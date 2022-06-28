@@ -12,7 +12,12 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <title>sherwinluissss's GitHub Page</title>
   </head>
   <body>
@@ -25,8 +30,9 @@
 
         <div class="collapse navbar-collapse" id="collapse_target">
           <ul class="navbar-nav align-items-center mx-auto" >
-            <li class="nav-item"><a class="nav-link" href="https://sherwinluissss.github.io/">Home</a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="https://sherwinluissss.github.io/">Home</a></li> -->
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#previous-works">Previous Works</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -35,8 +41,8 @@
     <header>
       <div class="container">
         <div class="row flex-column align-items-center">
-          <h1 class="myName"><span id="Sherwin"></span></h1>
-          <img src="/assets/img/profpic.jpg" class="prof-pic">
+          <h2 class="myName"><span id="Sherwin"></span></h2>
+          <img src="./assets/img/profpic.jpg" class="prof-pic">
           <p class="shortdesc">I am aspiring to be a Full-pledged Web Developer.🍻</p>
         </div>
       </div>
@@ -44,12 +50,13 @@
 
     <main>
       <div class="container" id="about">
-        <h1>About me</h1>
+        <h2>About me</h2>
         <div class="row justify-content-between">
           <div class="col-md-6">
             <div class="about-me">
-              <p><img src="/assets/img/profpic.jpg" class="aboutpic"> I'm <span class="font-italic">Sherwin Luis Morantte</span>, a 29 years old from Tagum City, Philippines. I graduated from Ateneo de Davao University with a degree in Information Technology.</p>
-              <p>I am currently working as a Web Developer for <a href="https://www.facebook.com/webeelabs" target="_blank">Webee Labs.</a> I spend most of my time tinkering with the Internet and looking for things that might be interesting, especially in Web Development. Solving problems is something I enjoy doing. I like to explore alternative solutions to problems and have an open mind about what will work best. My goal is to become a full-pledged Web Developer in the future.</p>
+              <p><img src="./assets/img/profpic.jpg" class="aboutpic"> I'm <span class="font-italic">Sherwin Luis Morantte</span>, a 29 years old from Tagum City, Philippines. I graduated from Ateneo de Davao University with a degree in Information Technology.</p>
+              <p>I have been working as a Web Developer for almost 5 years now.</p>
+              <p>I am currently a Web Developer for <a href="https://www.facebook.com/webeelabs" target="_blank">Webee Labs.</a> I spend most of my time tinkering with the Internet and looking for things that might be interesting, especially in Web Development. Solving problems is something I enjoy doing. I like to explore alternative solutions to problems and have an open mind about what will work best. My goal is to become a full-pledged Web Developer in the future.</p>
               
 
             </div>
@@ -86,6 +93,13 @@
                 </div>
               </div>
               <div class="skillBox">
+                <p>Shopify Liquid</p>
+                <p>75%</p>
+                <div class="skill">
+                  <div class="skill_level" style="width: 75%"></div>
+                </div>
+              </div>
+              <div class="skillBox">
                 <p>Photoshop</p>
                 <p>50%</p>
                 <div class="skill">
@@ -105,24 +119,54 @@
       </div>
     </main>
 
-    <!-- <div class="container">
-      <h1>Previous Works</h1>
-      <p class="h5 pb-4 text-center">I still don't have enough projects to show, but if you would like to work with me. My contact information are at the bottom of this page. You can also download my <span class="font-italic"><a class="nounderline" href="/assets/Resume_Morantte.pdf" download>resume</a></span> for further details.</p>
-      <div class="row justify-content-center">
-          <div class="card bg-sky" style="width:250px">
-            <img class="card-img-top" src="assets/iteracorp.jpg" alt="iteracorp.com" style="width:100%">
-            <div class="card-body ">
-              <h4 class="card-title text-center text-white">iTera Global I.T Solutions Corp.</h4>
-              <p class="card-text text-justify text-white">Developed a site for a startup company named as iTera, a subsidiary of 3TR Holdings. Created the site using Wordpress and Divi theme. I also did the company logo and other graphic designs of the site.</p>
-              <a href="http://iteracorp.com" class="btn btn-block btn-primary" target="_blank">See Profile</a>
-            </div>
-          </div>
+    <section class="container" id="previous-works">
+      <h2>Previous Works</h2>
+      <p class="h5 pb-4 text-center">These are just some of the websites that i have developed.<br> You can click these images to see the full view.</p>
+      <div class="row">
+        <div class="col-md-4 previous-work-wrapper">
+          <a href="./assets/img/gallery-gozo.jpg" data-fancybox class="previous-work-item">
+            <img src="./assets/img/gallery-gozo.jpg" alt="visit gozo">
+          </a>
+        </div>
+        
+        <div class="col-md-4 previous-work-wrapper">
+          <a href="./assets/img/gallery-farsons.jpg" data-fancybox class="previous-work-item">
+            <img src="./assets/img/gallery-farsons.jpg" alt="farsons7">
+          </a>
+        </div>
+        
+        <div class="col-md-4 previous-work-wrapper">
+          <a href="./assets/img/gallery-academy147.jpg" data-fancybox class="previous-work-item">
+            <img src="./assets/img/gallery-academy147.jpg" alt="academy-147">
+          </a>
+        </div>
+        
+        <div class="col-md-4 previous-work-wrapper">
+          <a href="./assets/img/gallery-pwc.jpg" data-fancybox class="previous-work-item">
+            <img src="./assets/img/gallery-pwc.jpg" alt="pwc">
+          </a>
+        </div>
+        
+        <div class="col-md-4 previous-work-wrapper">
+          <a href="./assets/img/gallery-valletapay.jpg" data-fancybox class="previous-work-item">
+            <img src="./assets/img/gallery-valletapay.jpg" alt="valletapay">
+          </a>
+        </div>
+        
+        <div class="col-md-4 previous-work-wrapper">
+          <a href="./assets/img/gallery-iteracorp.jpg" data-fancybox class="previous-work-item">
+            <img src="./assets/img/gallery-iteracorp.jpg" alt="iteracorp">
+          </a>
+        </div>
+        
+        
       </div>
-    </div> -->
-    <div class="container" id="contact">
+      
+    </section>
+  
+    <section class="container" id="contact">
 
-
-    <h1>Contact</h1>
+    <h2>Contact</h2>
 
     <p class="h5 pb-4 text-center">Interested in working together? don't hesitate to email me.<br>I will get back to you as soon as i can.</p>
 
@@ -190,7 +234,7 @@
       <footer class="text-center pt-5">
         <div class="container-fluid">
             <p class="h6">Sherwin Luis Morantte</p>
-            <p class="font-italic">© Copyright 2018</p>
+            <p class="font-italic">© Copyright 2021</p>
         </div>
       </footer>
 
@@ -227,10 +271,23 @@
       window.addEventListener('scroll', stickyNav);
       typeWriter();
     </script>
+    
       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" integrity="sha512-k2GFCTbp9rQU412BStrcD/rlwv1PYec9SNrkbQlo6RZCf75l6KcC3UwDY8H5n5hl4v77IDtIPwOk9Dqjs/mMBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
       <script src="js/smoothscroll.js" type="text/javascript"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-
+      <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+      <script>
+        jQuery(document).ready(function($){
+        var options = {
+            width: 400,
+            zoomWidth: 500,
+            offset: {vertical: 0, horizontal: 10}
+        };
+            new ImageZoom(document.querySelector('.previous-work-item'), options);
+        });
+      </script>
   </body>
+  
 </html>

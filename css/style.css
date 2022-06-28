@@ -16,10 +16,10 @@ a{
   color: #fff;
 }
 
-.container > h1 {
+.container > h1,
+.container > h2 {
   padding: 95px 0 40px;
   text-align: center;
-  /* margin: 50px; */
   letter-spacing: 7px;
 }
 .nav-item{
@@ -261,7 +261,17 @@ hr.style-one {
 .bg-sky {
   background: #2bb0d9;
 }
-
+#previous-works .previous-work-wrapper{
+  padding: 10px;
+}
+#previous-works .previous-work-item > img{
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  max-height: 500px;
+  object-position: top;
+  box-shadow:rgba(255, 255, 255, 0.8)
+}
 @media (max-width: 600px) {
   .myName {
     font-size: 34px;
