@@ -263,7 +263,7 @@ hr.style-one {
 .bg-sky {
   background: #2bb0d9;
 }
-#previous-works .previous-work-wrapper{
+#previous-works .featured-work-item{
   padding: 10px;
 }
 #previous-works .previous-work-item > img{
