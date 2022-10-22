@@ -18,7 +18,7 @@ a{
 
 .container > h1,
 .container > h2 {
-  padding: 95px 0 40px;
+  padding: 60px 0 40px;
   text-align: center;
   letter-spacing: 7px;
 }
@@ -263,10 +263,10 @@ hr.style-one {
 .bg-sky {
   background: #2bb0d9;
 }
-#previous-works .featured-work-item{
+#featured-works .featured-work-item{
   padding: 10px;
 }
-#previous-works .previous-work-item > img{
+#featured-works .featured-work-item > img{
   max-width: 100%;
   width: 100%;
   object-fit: cover;
@@ -292,7 +292,7 @@ hr.style-one {
   header,
   section,
   main{
-    padding: 80px;
+    padding: 40px;
   }
 }
 @media (max-width: 1200px) {
