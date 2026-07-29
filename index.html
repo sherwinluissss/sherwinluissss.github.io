@@ -1,277 +1,378 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv='cache-control' content='no-cache'> 
-    <meta http-equiv='expires' content='0'> 
-    <meta http-equiv='pragma' content='no-cache'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<title>Sherwin Luis Morantte — Web Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2F3EE;
+    --paper-2:#FFFFFF;
+    --ink:#14181C;
+    --ink-soft:#55606B;
+    --line:#D7D9D0;
+    --accent:#2F5D45;
+    --accent-ink:#EAF1EC;
+    --signal:#B9812C;
+    --signal-bg:#F3E7D2;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk',sans-serif;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:8px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{content:"//";color:var(--signal);}
 
-    <!-- Bootstrap CSS -->
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(242,243,238,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:64px;
+  }
+  .mark{
+    width:36px;height:36px;
+    border:1px solid var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'JetBrains Mono',monospace;font-weight:600;font-size:13px;
+    position:relative;
+  }
+  .mark::before,.mark::after,.navlinks a{transition:opacity .15s;}
+  .navlinks{display:flex;gap:28px;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
+  .navlinks a{opacity:.75;}
+  .navlinks a:hover{opacity:1;}
+  .clock{
+    display:flex;align-items:center;gap:8px;
+    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);
+  }
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+  @media (max-width:760px){ .navlinks{display:none;} }
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
-    />
-      <title>sherwinluissss's GitHub Page</title>
-  </head>
-  <body>
-    
-  <header>
-    
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-  
-        <button class="navbar-toggler navbar-dark ml-auto" data-toggle="collapse" data-target="#collapse_target">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  /* CROSSHAIR CORNERS */
+  .ticked{position:relative;}
+  .ticked::before,.ticked::after,.ticked .tick-r{content:"";position:absolute;width:10px;height:10px;}
+  .ticked::before{top:-1px;left:-1px;border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+  .ticked::after{bottom:-1px;right:-1px;border-bottom:1px solid var(--ink);border-right:1px solid var(--ink);}
 
-        <div class="collapse navbar-collapse" id="collapse_target">
-          <ul class="navbar-nav align-items-center mx-auto" >
-           
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#featured-works">Featured Works</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    
-  </header>
-  </main>
-  
-    <section class="container" id="introduction">
-   
-          <div class="row flex-column align-items-center">
-            <h2 class="myName"><span id="Sherwin"></span></h2>
-            <img src="./assets/img/hero-2.jpg" class="hero-image">
-            <p class="shortdesc">I am aspiring to be a Rockstar Web Developer.🍻</p>
-          </div>
-        
-    </section>
+  section{padding:96px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
 
-    <section class="container" id="about">
-        <h2>About me</h2>
-        <div class="row justify-content-between">
-          <div class="col-md-6">
-            <div class="about-me">
-              <p><img src="./assets/img/hero.jpg" class="aboutpic"> I'm <em>Sherwin Luis Morantte</em>, a 29-year-old Filipino from Tagum City. I earned my degree in information technology from Ateneo de Davao University.</p>
-              <p>I have been a Web Developer for almost 5 years now.</p>
-              <p>I spend the most of my time on the Internet fiddling and searching for potential interests, particularly in Web Development. Solving problems is something I enjoy doing. I like to explore alternative solutions to problems and have an open mind about what will work best. My goal is to become a full-pledged Web Developer in the future.</p>
-              
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1.15fr 0.85fr;gap:64px;align-items:center;padding-top:72px;}
+  .hero h1{font-size:clamp(34px,4.6vw,56px);line-height:1.05;font-weight:600;}
+  .hero .role{
+    margin-top:14px;font-size:17px;color:var(--ink-soft);max-width:46ch;line-height:1.55;
+  }
+  .cta-row{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+  .btn{
+    padding:12px 20px;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em;
+    border:1px solid var(--ink);
+  }
+  .btn.primary{background:var(--ink);color:var(--paper-2);}
+  .btn.primary:hover{background:var(--accent);border-color:var(--accent);}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper-2);}
+  .meta-row{display:flex;gap:36px;margin-top:48px;flex-wrap:wrap;}
+  .meta-row div{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;}
+  .meta-row strong{display:block;font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);font-weight:600;text-transform:none;margin-top:4px;letter-spacing:0;}
+  .portrait{position:relative;padding:14px;border:1px solid var(--line);background:var(--paper-2);}
+  .portrait img{width:100%;display:block;filter:grayscale(15%);}
+  .portrait figcaption{margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);text-align:center;}
 
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="skill-set">
-              <h2>Skill set</h2>
-              <div class="skillBox">
-                <p>html5</p>
-                <p>95%</p>
-                <div class="skill">
-                  <div class="skill_level" style="width: 95%"></div>
-                </div>
-              </div>
-              <div class="skillBox">
-                <p>css3</p>
-                <p>95%</p>
-                <div class="skill">
-                  <div class="skill_level" style="width: 95%" ></div>
-                </div>
-              </div>
-              <div class="skillBox">
-                <p>JavaScript</p>
-                <p>75%</p>
-                <div class="skill">
-                  <div class="skill_level" style="width: 75%"></div>
-                </div>
-              </div>
-              <div class="skillBox">
-                <p>PHP</p>
-                <p>75%</p>
-                <div class="skill">
-                  <div class="skill_level" style="width: 75%"></div>
-                </div>
-              </div>
-              <div class="skillBox">
-                <p>Shopify Liquid</p>
-                <p>75%</p>
-                <div class="skill">
-                  <div class="skill_level" style="width: 75%"></div>
-                </div>
-              </div>
-              <div class="skillBox">
-                <p>REST API</p>
-                <p>75%</p>
-                <div class="skill">
-                  <div class="skill_level" style="width: 75%"></div>
-                </div>
-              </div>
-              <div class="skillBox">
-                <p>Photoshop</p>
-                <p>50%</p>
-                <div class="skill">
-                  <div class="skill_level" style="width: 50%"></div>
-                </div>
-              </div>
-              <div class="skillBox">
-                <p>Illustrator</p>
-                <p>50%</p>
-                <div class="skill">
-                  <div class="skill_level" style="width: 50%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;}
+  .about-grid p{color:var(--ink-soft);line-height:1.7;font-size:15.5px;margin:0 0 16px;}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .facts div{background:var(--paper-2);padding:20px;}
+  .facts .flabel{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--signal);margin-bottom:8px;}
+  .facts .fval{font-size:14.5px;font-weight:500;}
 
-    <section class="container" id="featured-works">
-      <h2>Featured Works</h2>
-      <div class="row">
-        
-        
-        <div class="col-md-4 featured-work-item">
-          <a href="./assets/img/gallery-farsons.jpg" data-fancybox class="featured-work-item">
-            <img src="./assets/img/gallery-farsons.jpg" alt="farsons7">
-          </a>
-        </div>
-        
-        <div class="col-md-4 featured-work-item">
-          <a href="./assets/img/niki-hudson.jpg" data-fancybox class="featured-work-item">
-            <img src="./assets/img/niki-hudson.jpg" alt="farsons7">
-          </a>
-        </div>
-        
-        <div class="col-md-4 featured-work-item">
-          <a href="./assets/img/gallery-shapelamp.jpg" data-fancybox class="featured-work-item">
-            <img src="./assets/img/gallery-shapelamp.jpg" alt="shapelamp">
-          </a>
-        </div>
-        
-        <div class="col-md-4 featured-work-item">
-          <a href="./assets/img/gallery-mbs-edu.jpg" data-fancybox class="featured-work-item">
-            <img src="./assets/img/gallery-mbs-edu.jpg" alt="MBS">
-          </a>
-        </div>
-        
-        <div class="col-md-4 featured-work-item">
-          <a href="./assets/img/gallery-academy147.jpg" data-fancybox class="featured-work-item">
-            <img src="./assets/img/gallery-academy147.jpg" alt="academy-147">
-          </a>
-        </div>
-        
-        <div class="col-md-4 featured-work-item">
-          <a href="./assets/img/gallery-pwc.jpg" data-fancybox class="featured-work-item">
-            <img src="./assets/img/gallery-pwc.jpg" alt="pwc">
-          </a>
-        </div>
-        
-        <div class="col-md-4 featured-work-item">
-          <a href="./assets/img/gallery-mpa.jpg" data-fancybox class="featured-work-item">
-            <img src="./assets/img/gallery-mpa.jpg" alt="malta-property-auctioneers">
-          </a>
-        </div>
-        
-        <div class="col-md-4 featured-work-item">
-          <a href="./assets/img/gallery-gozo.jpg" data-fancybox class="featured-work-item">
-            <img src="./assets/img/gallery-gozo.jpg" alt="visit gozo">
-          </a>
-        </div>
-        
-        <div class="col-md-4 featured-work-item">
-          <a href="./assets/img/gallery-phoenicia.jpg" data-fancybox class="featured-work-item">
-            <img src="./assets/img/gallery-phoenicia.jpg" alt="phoenicia">
-          </a>
-        </div>
-        
-        
-      </div>
-      
-    </section>
-    
-    <section class="container" id="contact">
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .skill-col{background:var(--paper-2);padding:28px;}
+  .skill-col h3{font-size:14px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.05em;margin-bottom:20px;}
+  .skill-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line);}
+  .skill-row:first-of-type{border-top:none;}
+  .skill-row span:first-child{font-size:14.5px;}
+  .chip{
+    font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.05em;
+    padding:4px 8px;background:var(--signal-bg);color:var(--signal);white-space:nowrap;
+  }
+  @media (max-width:760px){ .skills-grid{grid-template-columns:1fr;} }
 
-      <h2>Contact</h2>
+  /* WORK */
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px;}
+  .work-card{border:1px solid var(--line);background:var(--paper-2);overflow:hidden;display:block;}
+  .work-card .thumb{aspect-ratio:4/3;overflow:hidden;border-bottom:1px solid var(--line);}
+  .work-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+  .work-card:hover img{transform:scale(1.05);}
+  .work-card .info{padding:16px 18px;}
+  .work-card .cname{font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;}
+  .work-tags{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
+  .tag{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);border:1px solid var(--line);padding:3px 7px;}
+  .tag.region{color:var(--accent);border-color:var(--accent);}
+  @media (max-width:900px){ .work-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .work-grid{grid-template-columns:1fr;} }
 
-      <p class="h5 pb-4 text-center">Interested in working together? don't hesitate to email me.<br>I will get back to you as soon as i can.</p>
+  /* CONTACT */
+  .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .contact-wrap h2{font-size:clamp(28px,3.6vw,40px);font-weight:600;line-height:1.15;}
+  .contact-note{color:var(--ink-soft);margin-top:16px;font-size:15px;line-height:1.6;max-width:42ch;}
+  .rows{border-top:1px solid var(--line);}
+  .row{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--line);align-items:center;}
+  .row .rlabel{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);}
+  .row .rval{font-size:15px;font-weight:500;}
+  .row a.rval:hover{color:var(--accent);}
 
-      <div class="row justify-content-center">
-            <div class="col-lg-6 mb-4">
-              <address>
-                <ul class="list-unstyled text-justify p-3">
-                  <li><p class="h6 pl-1"><i class="fa fa-envelope-open text-white"></i><a class="mail" href="mailto:sherwinluissss@gmail.com">sherwinluissss@gmail.com</a></p></li>
-                  <li><p class="h6 pl-1"><i class="fa fa-phone text-white"></i>+639 915 144 0304</p></li>
-                  <li><p class="h6 pl-1"><i class="fa fa-map-marker"></i>Tagum City, Davao del Norte, Philippines</p></li>
-                </ul>
-                  <hr class="style-one">
-                <ul class="list-unstyled text-center">
-                  <li class="list-inline-item bg-white rounded-circle"><a href="https://www.facebook.com/sherwinluis" class="fa fa-facebook" target="_blank"></a></li>
-                  <li class="list-inline-item bg-white rounded-circle"><a href="https://www.instagram.com/sherwinluissss" class="fa fa-instagram" target="_blank"></a></li>
-                  <li class="list-inline-item bg-white rounded-circle"><a href="https://github.com/sherwinluissss" class="fa fa-github" target="_blank"></a></li>
-                </ul>
-              </address>
-            </div>
-          </div>
-        </div>
-        
-    </section>
-  </main>
-  
-  <footer class="text-center pt-5">
-    <div class="container-fluid">
-        <p class="h6">Sherwin Luis Morantte</p>
-        <p class="font-italic">© Copyright 2021</p>
+  footer{padding:36px 0;}
+  .foot-wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .foot-name{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);}
+  .foot-socials{display:flex;gap:20px;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.05em;}
+  .foot-socials a{opacity:.7;}
+  .foot-socials a:hover{opacity:1;color:var(--accent);}
+
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .contact-wrap{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+  }
+
+  [data-reveal]{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+    .dot{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#top" style="display:flex;align-items:center;gap:12px;">
+      <div class="mark ticked">SLM</div>
+    </a>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
     </div>
-  </footer>
+    <div class="clock">
+      <span class="dot"></span>
+      <span>TAGUM CITY, PH · GMT+8 ·</span>
+      <span id="clock">--:--:--</span>
+    </div>
+  </nav>
+</header>
 
+<main class="wrap" id="top">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script>
-      const element = document.getElementById('Sherwin');
-      const nav = document.querySelector('nav');
-      let i = 0;
-      function typeWriter() {
-        const greetings = 'Hello, I\'m Sherwin Luis!';
+  <section class="hero">
+    <div data-reveal>
+      <div class="eyebrow">About Sherwin</div>
+      <h1>Sherwin Luis Morantte</h1>
+      <p class="role">Web Developer building storefronts, brochure sites, and integrations for clients across Southeast Asia and Europe — with an eye for detail and a habit of shipping things that hold up.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="mailto:sherwinluissss@gmail.com">Email me</a>
+        <a class="btn ghost" href="#work">View featured work</a>
+      </div>
+      <div class="meta-row">
+        <div>Location<strong>Tagum City, PH</strong></div>
+        <div>Experience<strong>8+ years</strong></div>
+        <div>Education<strong>Ateneo de Davao University</strong></div>
+      </div>
+    </div>
+    <div data-reveal>
+      <figure class="portrait ticked">
+        <img src="https://sherwinluissss.github.io/assets/img/hero.jpg" alt="Portrait of Sherwin Luis Morantte" />
+        <figcaption>Portrait — Tagum City, PH</figcaption>
+      </figure>
+    </div>
+  </section>
 
-        if (i < greetings.length) {
-          element.textContent += greetings.charAt(i);
-          setTimeout(typeWriter, 100);
-          i += 1;
-        }
-      }
-      function stickyNav() {
-        if (window.scrollY >= 20) {
-          nav.classList.add('sticky-top');
-        } else {
-          nav.classList.remove('sticky-top');
-        }
-      }
-      window.addEventListener('scroll', stickyNav);
-      typeWriter();
-    </script>
-    
-      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" integrity="sha512-k2GFCTbp9rQU412BStrcD/rlwv1PYec9SNrkbQlo6RZCf75l6KcC3UwDY8H5n5hl4v77IDtIPwOk9Dqjs/mMBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-      <script src="js/smoothscroll.js" type="text/javascript"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-      <script>
-        jQuery(document).ready(function($){
-        var options = {
-            width: 400,
-            zoomWidth: 500,
-            offset: {vertical: 0, horizontal: 10}
-        };
-            new ImageZoom(document.querySelector('.featured-work-item'), options);
-        });
-      </script>
-  </body>
-  
+  <section id="about">
+    <div class="about-grid">
+      <div data-reveal>
+        <div class="eyebrow">About</div>
+        <h2 style="font-size:clamp(24px,3vw,32px);font-weight:600;margin-bottom:20px;">Building reliable web experiences, from Mindanao to the world.</h2>
+        <p>I'm a 29-year-old web developer from Tagum City, Philippines, with a degree in Information Technology from Ateneo de Davao University. For almost nine years I've been building and maintaining sites for clients ranging from local businesses to international brands.</p>
+        <p>I spend most of my time exploring new corners of web development and enjoy the problem-solving side of the work most — weighing a few approaches before settling on the one that fits. The goal is simple: keep getting better at the craft.</p>
+      </div>
+      <div data-reveal>
+        <div class="facts">
+          <div><div class="flabel">Based in</div><div class="fval">Tagum City, Davao del Norte, PH</div></div>
+          <div><div class="flabel">Timezone</div><div class="fval">GMT+8 (Asia/Manila)</div></div>
+          <div><div class="flabel">Experience</div><div class="fval">8+ years, freelance & agency work</div></div>
+          <div><div class="flabel">Focus</div><div class="fval">Brochure sites, Shopify, integrations</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="capabilities">
+    <div data-reveal>
+      <div class="eyebrow">Capabilities</div>
+      <h2 style="font-size:clamp(24px,3vw,32px);font-weight:600;margin-bottom:28px;">What I work with</h2>
+    </div>
+    <div class="skills-grid" data-reveal>
+      <div class="skill-col">
+        <h3>Core Web</h3>
+        <div class="skill-row"><span>HTML5</span><span class="chip">Advanced</span></div>
+        <div class="skill-row"><span>CSS3</span><span class="chip">Advanced</span></div>
+        <div class="skill-row"><span>JavaScript</span><span class="chip">Proficient</span></div>
+      </div>
+      <div class="skill-col">
+        <h3>Commerce &amp; Integrations</h3>
+        <div class="skill-row"><span>PHP</span><span class="chip">Proficient</span></div>
+        <div class="skill-row"><span>Shopify Liquid</span><span class="chip">Proficient</span></div>
+        <div class="skill-row"><span>REST API</span><span class="chip">Proficient</span></div>
+      </div>
+      <div class="skill-col">
+        <h3>Visual Design</h3>
+        <div class="skill-row"><span>Photoshop</span><span class="chip">Working knowledge</span></div>
+        <div class="skill-row"><span>Illustrator</span><span class="chip">Working knowledge</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div data-reveal>
+      <div class="eyebrow">Selected Work</div>
+      <h2 style="font-size:clamp(24px,3vw,32px);font-weight:600;">Recent projects</h2>
+    </div>
+    <div class="work-grid" data-reveal>
+
+      <a class="work-card" href="https://sherwinluissss.github.io/assets/img/gallery-farsons.jpg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://sherwinluissss.github.io/assets/img/gallery-farsons.jpg" alt="Farsons"></div>
+        <div class="info"><div class="cname">Farsons</div>
+          <div class="work-tags"><span class="tag">Corporate site</span><span class="tag region">Malta</span></div></div>
+      </a>
+
+      <a class="work-card" href="https://sherwinluissss.github.io/assets/img/niki-hudson.jpg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://sherwinluissss.github.io/assets/img/niki-hudson.jpg" alt="Niki Hudson"></div>
+        <div class="info"><div class="cname">Niki Hudson</div>
+          <div class="work-tags"><span class="tag">Brand site</span></div></div>
+      </a>
+
+      <a class="work-card" href="https://sherwinluissss.github.io/assets/img/gallery-shapelamp.jpg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://sherwinluissss.github.io/assets/img/gallery-shapelamp.jpg" alt="Shapelamp"></div>
+        <div class="info"><div class="cname">Shapelamp</div>
+          <div class="work-tags"><span class="tag">Product site</span></div></div>
+      </a>
+
+      <a class="work-card" href="https://sherwinluissss.github.io/assets/img/gallery-mbs-edu.jpg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://sherwinluissss.github.io/assets/img/gallery-mbs-edu.jpg" alt="MBS Education"></div>
+        <div class="info"><div class="cname">MBS Education</div>
+          <div class="work-tags"><span class="tag">Education</span></div></div>
+      </a>
+
+      <a class="work-card" href="https://sherwinluissss.github.io/assets/img/gallery-academy147.jpg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://sherwinluissss.github.io/assets/img/gallery-academy147.jpg" alt="Academy 147"></div>
+        <div class="info"><div class="cname">Academy 147</div>
+          <div class="work-tags"><span class="tag">Education</span></div></div>
+      </a>
+
+      <a class="work-card" href="https://sherwinluissss.github.io/assets/img/gallery-pwc.jpg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://sherwinluissss.github.io/assets/img/gallery-pwc.jpg" alt="PwC"></div>
+        <div class="info"><div class="cname">PwC</div>
+          <div class="work-tags"><span class="tag">Corporate site</span></div></div>
+      </a>
+
+      <a class="work-card" href="https://sherwinluissss.github.io/assets/img/gallery-mpa.jpg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://sherwinluissss.github.io/assets/img/gallery-mpa.jpg" alt="Malta Property Auctioneers"></div>
+        <div class="info"><div class="cname">Malta Property Auctioneers</div>
+          <div class="work-tags"><span class="tag">Real estate</span><span class="tag region">Malta</span></div></div>
+      </a>
+
+      <a class="work-card" href="https://sherwinluissss.github.io/assets/img/gallery-gozo.jpg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://sherwinluissss.github.io/assets/img/gallery-gozo.jpg" alt="Visit Gozo"></div>
+        <div class="info"><div class="cname">Visit Gozo</div>
+          <div class="work-tags"><span class="tag">Tourism</span><span class="tag region">Malta</span></div></div>
+      </a>
+
+      <a class="work-card" href="https://sherwinluissss.github.io/assets/img/gallery-phoenicia.jpg" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://sherwinluissss.github.io/assets/img/gallery-phoenicia.jpg" alt="Phoenicia"></div>
+        <div class="info"><div class="cname">Phoenicia</div>
+          <div class="work-tags"><span class="tag">Hospitality</span><span class="tag region">Malta</span></div></div>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-wrap">
+      <div data-reveal>
+        <div class="eyebrow">Contact</div>
+        <h2>Let's build<br/>something.</h2>
+        <p class="contact-note">Interested in working together? I'm based in GMT+8 and keep flexible hours to overlap with teams in Europe and beyond. I'll get back to you as soon as I can.</p>
+      </div>
+      <div data-reveal>
+        <div class="rows">
+          <div class="row"><span class="rlabel">Email</span><a class="rval" href="mailto:sherwinluissss@gmail.com">sherwinluissss@gmail.com</a></div>
+          <div class="row"><span class="rlabel">Phone</span><a class="rval" href="tel:+639755087035">+63 975 508 7035</a></div>
+          <div class="row"><span class="rlabel">Location</span><span class="rval">Tagum City, Davao del Norte, PH</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <div class="foot-wrap">
+    <div class="foot-name">Sherwin Luis Morantte — Web Developer · © 2026</div>
+    <div class="foot-socials">
+      <a href="https://www.facebook.com/sherwinluis" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/sherwinluissss" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://github.com/sherwinluissss" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function tick(){
+    const now = new Date();
+    const parts = new Intl.DateTimeFormat('en-GB',{
+      timeZone:'Asia/Manila', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false
+    }).formatToParts(now).reduce((a,p)=>{a[p.type]=p.value;return a;},{});
+    document.getElementById('clock').textContent = `${parts.hour}:${parts.minute}:${parts.second}`;
+  }
+  tick(); setInterval(tick,1000);
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+</script>
+
+</body>
 </html>
